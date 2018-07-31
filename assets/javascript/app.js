@@ -6,6 +6,8 @@ var startYear = [];
 startYear = $("#yearinput").html;
 var endYear = [];
 endYear = $("#endyearinput").html;
+var recordNumber = [];
+recordNumber = $("#exampleFormControlSelect1").html;
 $("#searchButton").on("click", function() {
 
 });
@@ -13,6 +15,7 @@ $("#clearButton").on("click", function() {
 searchParameters = [];
 startYear = [];
 endYear = [];
+recordNumber = [1];
 });
 var search = $(this).attr('data-name');
 var queryURL =
