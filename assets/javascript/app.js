@@ -22,6 +22,12 @@ $("#searchButton").on("click", function() {
         var arr = res.response.docs;
         for (var i = 0; i < recordNum; i++) {
             console.log(arr[i]);
+            var newDiv = $('<div>');
+            var p = $('<p>');
+            p.text(arr[i].headline.main);
+
+            newDiv.append(p);
+            $('#results').append(newDiv);
         }
     });
 });
@@ -37,6 +43,10 @@ $("#endyearinput").val("");
 
 });
 
+
+
+
+
 // var search = $(this).attr('data-name');
 // var queryURL =
 //   'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=b43250bb6ea945bbbcbee004241d4b01&q=' + search;
@@ -51,17 +61,5 @@ $("#endyearinput").val("");
 //     }
 // });
 
-var search = $(this).attr('data-name');
 
-var queryURL =
-  'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=b43250bb6ea945bbbcbee004241d4b01&q=test&begin_date=20001012&end_date=20081209';
-
-$.ajax({
-    url: queryURL
-}).then(function(res) {
-    var arr = res.response.docs;
-    for (var i = 0; i < recordNum; i++) {
-        console.log(arr[i]);
-    }
-});
 
